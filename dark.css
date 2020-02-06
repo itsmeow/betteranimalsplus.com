@@ -23,29 +23,14 @@ main article {
     background-color: #121212;
 }
 
+h1,
+h2,
+h3 {
+    color: white;
+}
+
 .banner-container {
     background: linear-gradient(to top, #121212ff, #121212ff, #12121220, transparent, transparent, transparent);
-}
-
-footer {
-    background-color: #0c0c0c;
-    color: white;
-    border-top: 2px solid #cf800020;
-}
-
-footer a.footerlink {
-    background-color: #202020;
-    color: #e2e2e2;
-    border-top: 1px solid gray;
-    border-bottom: 1px dotted black;
-}
-
-.footernote {
-    color: #777777;
-}
-
-#topfooter {
-    border-right: 1px dotted black;
 }
 
 .centerimg {
@@ -87,4 +72,9 @@ a.nodecor {
 
 .github-dark {
     display: none;
+}
+
+.devsection {
+    border-bottom: 1px solid #323232;
+    border-top: 1px solid #323232;
 }
