@@ -3,15 +3,6 @@ html {
     color: #101010;
 }
 
-header {
-    background-color: black;
-    color: white;
-}
-
-.header-container {
-    border: 1px solid black;
-}
-
 main {
     background-color: #f0f0f0;
 }
