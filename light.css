@@ -25,6 +25,10 @@ h3 {
     background: linear-gradient(to top, #f0f0f0ff, #f0f0f0ff, #f0f0f020, transparent, transparent, transparent);
 }
 
+.dlcounter .downloadcount {
+    color: #e8e8e8;
+}
+
 .centerimg {
     border: 2px solid #a0a0a0;
 }

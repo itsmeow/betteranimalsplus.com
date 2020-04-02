@@ -201,6 +201,7 @@ input:checked+.slider:before {
 .banner {
     display: block;
     position: relative;
+    max-width: 1024px;
     max-height: 550px;
     width: 90%;
     height: auto;
@@ -461,9 +462,37 @@ a.nodecor {
     transition-duration: 0.25s;
 }
 
+.dlcounter {
+    position: absolute;
+    bottom: 35%;
+    z-index: 5;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 187, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 187, 0, 0.5);
+    font-size: 0.7rem;
+}
+
+.downloadcount {
+    font-family: "proxima-nova", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+}
+
+.dlcounter2 {
+    border: 1px solid rgba(255, 187, 0, 0.5);
+    background-color: #0c0c0c;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .title-front {
     position: absolute;
-    bottom: 40%;
+    bottom: 50%;
     z-index: 5;
     width: 80%;
     margin-left: 10%;
@@ -473,12 +502,16 @@ a.nodecor {
 
 .title-back {
     position: absolute;
-    bottom: 40%;
+    bottom: 50%;
     z-index: 4;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
     font-size: 0.7rem;
+}
+
+.dlcounter2 {
+    display: none;
 }
 
 @media (max-width:450px) {
@@ -492,10 +525,19 @@ a.nodecor {
         width: 7.35rem;
         font-size: 0.7rem;
     }
+}
+
+@media (max-width:600px) {
+    .dlcounter {
+        display: none;
+    }
+    .dlcounter2 {
+        display: block;
+    }
     .title-front {
-        bottom: 30%;
+        bottom: 23%;
     }
     .title-back {
-        bottom: 30%;
+        bottom: 23%;
     }
 }
