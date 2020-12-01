@@ -1,0 +1,159 @@
+.pad {
+  padding: 10px;
+}
+
+.highlightsection {
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+
+.highlightsection:hover {
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.01);
+}
+
+.limit-width {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.limit-width-pad {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.limit-width-pad-2 {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+section.limit-width-pad hr {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.limit-width-pad {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+main .left-content,
+main .rightbar {
+  margin-top: 15px;
+}
+
+.show-small {
+  display: none;
+}
+
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 200px;
+  text-align: center;
+  height: auto;
+  border: 2px solid #404040;
+}
+
+.flex-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.flex-list .flex-list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-text {
+  text-align: center;
+  justify-content: center;
+}
+
+.showMoreBlock {
+  transform: scaleY(0);
+  transform-origin: top;
+  -webkit-transition: transform linear;
+  transition: transform linear;
+  height: 0;
+  overflow: hidden;
+}
+
+.showMoreBlock.shown {
+  height: auto;
+  transform: scaleY(1);
+}
+
+.basecolor {
+  color: $text-color;
+  &:hover {
+    color: $text-color;
+  }
+}
+
+.flex-list-item.scale-big {
+  margin-top: 20px;
+}
+
+.flex-list-item.scale-big .pebblebox {
+  width: 100vw;
+  max-width: 600px;
+  height: 320px;
+}
+
+@media (min-width: 900px) {
+  .flex-list-item.scale-big {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 899px) {
+  .flex-list-item.scale-big {
+    max-width: calc(100vw - 20px);
+    .pebblebox {
+      margin-left: 10px;
+      margin-right: 10px;
+      a {
+        display: block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1109px) {
+  .show-small {
+    display: contents;
+  }
+}
+
+.slider {
+  height: 100vh;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  .slider {
+    scroll-snap-align: start;
+  }
+  main {
+    article {
+      scroll-snap-align: start;
+    }
+    section {
+      scroll-snap-align: start;
+    }
+  }
+  footer {
+    scroll-snap-align: start;
+  }
+}

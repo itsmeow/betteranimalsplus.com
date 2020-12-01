@@ -1,0 +1,11 @@
+@import "variables";
+$body-bg: $primary-background;
+$body-color: $text-color;
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "footer";
+@import "layout";
+@import "index";
+@import "title";
+main {
+  box-shadow: 0 -10px 15px 15px $primary-background;
+}
