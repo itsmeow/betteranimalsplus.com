@@ -100,12 +100,6 @@ main .rightbar {
   margin-top: 20px;
 }
 
-.flex-list-item.scale-big .pebblebox {
-  width: 100vw;
-  max-width: 600px;
-  height: 320px;
-}
-
 @media (min-width: 900px) {
   .flex-list-item.scale-big {
     width: 50%;
@@ -116,16 +110,6 @@ main .rightbar {
 @media (max-width: 899px) {
   .flex-list-item.scale-big {
     max-width: calc(100vw - 20px);
-    .pebblebox {
-      margin-left: 10px;
-      margin-right: 10px;
-      a {
-        display: block;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
   }
 }
 
@@ -140,20 +124,31 @@ main .rightbar {
 }
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  .slider {
-    scroll-snap-align: start;
-  }
-  main {
-    article {
+  scroll-snap-type: y mandatory;
+  body {
+    .slider {
       scroll-snap-align: start;
+      scroll-snap-stop: always;
     }
-    section {
-      scroll-snap-align: start;
+    main {
+      article {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        height: 100vh;
+        width: 100%;
+        div.center-box {
+          width: 100%;
+          margin: 0;
+          position: relative;
+          top: 50vh;
+          transform: translateY(-50%);
+        }
+      }
     }
   }
   footer {
     scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 }

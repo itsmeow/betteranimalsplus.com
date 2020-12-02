@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 div.main {
   min-height: 100vh;
   padding-bottom: $footer-height;
@@ -37,6 +41,12 @@ a.link-no-style {
   transform: translateX(-50%);
 }
 
+.center-item-3 {
+  width: 100%;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
 hr {
   border: 0;
   height: 1px;
@@ -50,4 +60,38 @@ h3,
 h4,
 h5 {
   font-weight: bold;
+}
+
+text-center {
+  text-align: center;
+}
+
+.big {
+  font-size: 10vw;
+  @media (max-width: 800px) {
+    font-size: 12vw;
+    @media (max-width: 600px) {
+      font-size: 13vw;
+    }
+  }
+  @media (min-width: 2000px) {
+    font-size: 6vw;
+  }
+}
+
+.medium-big {
+  font-size: 6vw;
+}
+
+.medium {
+  font-size: 5vw;
+  @media (max-width: 800px) {
+    font-size: 7vw;
+    @media (max-width: 600px) {
+      font-size: 8vw;
+    }
+  }
+  @media (min-width: 2000px) {
+    font-size: 3vw;
+  }
 }

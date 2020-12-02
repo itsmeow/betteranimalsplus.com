@@ -2,10 +2,17 @@
 $body-bg: $primary-background;
 $body-color: $text-color;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/animate.css/animate.min.css";
+@import "odometer";
 @import "footer";
 @import "layout";
 @import "index";
 @import "title";
+@import "staffcard";
+@import "patreon";
+@import "stylebutton";
+/*
 main {
   box-shadow: 0 -10px 15px 15px $primary-background;
 }
+*/

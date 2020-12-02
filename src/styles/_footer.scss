@@ -34,6 +34,9 @@ footer .bottomfooter {
 
 .topfooter div.gatsby-image-wrapper {
   margin: 10px;
+  box-sizing: border-box;
+  border-radius: 48px;
+  border: 2px solid #e8e8e855;
 }
 
 .topfooter .github {

@@ -1,11 +1,32 @@
 import React from "react";
+import { Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
+  const { logo } = useStaticQuery(
+    graphql`
+      query {
+        logo: file(relativePath: { eq: "icon.png" }) {
+          childImageSharp {
+            fixed(width: 128, height: 128, quality: 100) {
+              ...GatsbyImageSharpFixed_withWebp
+            }
+          }
+        }
+      }
+    `
+  );
   return (
     <footer>
       <div className="topfooter">
-        {/* TODO INSERT LOGO */}
+        <Link to="/" className="link-no-style">
+          <Img
+            alt="Better Animals Plus logo"
+            fixed={logo.childImageSharp.fixed}
+          ></Img>
+        </Link>
         <div className="github">
           <a
             href="https://github.com/itsmeow/betteranimalsplus/tree/web"

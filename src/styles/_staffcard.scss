@@ -1,0 +1,84 @@
+.devname {
+  margin: 0;
+}
+
+.devrole {
+  font-family: "Consolas";
+  font-size: 13px;
+}
+
+.devlogo {
+  float: left;
+  height: calc(15vw);
+  max-height: calc(100vh / 3 - 3vw - 20px - 10px);
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.devsection {
+  height: calc(15vw + 10px);
+  max-height: calc(100vh / 3 - 3vw - 20px);
+  max-width: 1500px;
+  border-bottom: 1px solid #323232;
+  border-top: 1px solid #323232;
+  text-align: left;
+}
+
+.devtop {
+  width: 100%;
+  height: 62.4px;
+}
+
+.devmaininfo {
+  float: left;
+}
+
+.devlinks .linkbutton {
+  margin-top: 15px;
+  height: 38px;
+  float: left;
+}
+
+.devlinks .patreonButton {
+  margin-top: 15px;
+  margin-left: 10px;
+  float: left;
+}
+
+.devinfo p {
+  margin-left: 5px;
+}
+
+.devlinks {
+  float: right;
+}
+
+.devlinks > * {
+  float: left;
+}
+
+@media (max-width: 950px) {
+  .devinfo p {
+    clear: left;
+  }
+  .devsection {
+    height: auto;
+  }
+  .devmaininfo {
+    margin-top: calc(7.5vw - 25px);
+  }
+  .devlinks {
+    float: none;
+    clear: left;
+  }
+  .devlinks .linkbutton {
+    margin-top: 0;
+  }
+  .devlinks .patreonButton {
+    margin-top: 0;
+  }
+  .devlinks > * {
+    float: none;
+  }
+}
