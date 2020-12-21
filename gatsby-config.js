@@ -11,17 +11,17 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        fonts: [`Ranchers`],
-        display: "swap",
+        name: `backgrounds`,
+        path: `./src/data/backgrounds`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `backgrounds`,
-        path: `./src/data/backgrounds`,
+        name: `devlogos`,
+        path: `./src/data/devlogos`,
       },
     },
     {
@@ -54,7 +54,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#121212`,
         theme_color: `#121212`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/data/icon.png`,
         icon_options: {
           purpose: `maskable`,

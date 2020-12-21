@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import { FaGithub } from "react-icons/fa";
@@ -21,15 +20,13 @@ const Footer = () => {
   return (
     <footer>
       <div className="topfooter">
-        <Link to="/" className="link-no-style">
-          <Img
-            alt="Better Animals Plus logo"
-            fixed={logo.childImageSharp.fixed}
-          ></Img>
-        </Link>
+        <Img
+          alt="Better Animals Plus logo"
+          fixed={logo.childImageSharp.fixed}
+        />
         <div className="github">
           <a
-            href="https://github.com/itsmeow/betteranimalsplus/tree/web"
+            href="https://github.com/itsmeow/betteranimalsplus.com"
             className="link-no-style"
             target="_blank"
             rel="noopener noreferrer"

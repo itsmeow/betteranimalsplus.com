@@ -66,6 +66,12 @@ text-center {
   text-align: center;
 }
 
+.big,
+.medium,
+.medium-big {
+  font-weight: normal;
+}
+
 .big {
   font-size: 10vw;
   @media (max-width: 800px) {

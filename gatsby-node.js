@@ -1,13 +1,14 @@
 exports.onCreateNode = ({ graphql, actions }) => {
   const { createRedirect } = actions;
-  createRedirect({
-    fromPath: "/wiki",
-    toPath: "https://wiki.betteranimalsplus.com/",
-    isPermanent: true,
-  });
-  createRedirect({
-    fromPath: "/discord",
-    toPath: "https://discord.betteranimalsplus.com/",
-    isPermanent: true,
-  });
+  const redir = (text) => {
+    createRedirect({
+      fromPath: "/" + text,
+      toPath: `https://${text}.betteranimalsplus.com/`,
+    });
+  };
+  redir("wiki");
+  redir("discord");
+  redir("trello");
+  redir("github");
+  redir("download");
 };

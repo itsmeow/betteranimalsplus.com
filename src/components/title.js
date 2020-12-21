@@ -9,7 +9,7 @@ const Title = ({ animateIn }) => {
     </>
   );
   return (
-    <div className="title-box">
+    <div className="title-box title-holder">
       {animateIn ? (
         <ScrollAnimation animateIn={animateIn} animateOnce>
           {text}

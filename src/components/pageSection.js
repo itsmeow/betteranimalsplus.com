@@ -21,7 +21,7 @@ const PageSection = ({ animateIn, children, ...delegate }) => {
 };
 
 PageSection.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.array,
   animateIn: PropTypes.string,
 };
 

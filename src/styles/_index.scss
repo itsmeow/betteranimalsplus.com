@@ -48,6 +48,50 @@ main .rightbar {
   display: none;
 }
 
+.image-center-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  a {
+    display: block;
+
+    height: 30vh;
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 36px;
+    }
+  }
+}
+
+.image-center-wrapper.hover-scale {
+  a {
+    transition: all 0.25s;
+  }
+  a:hover {
+    transition: all 0.25s;
+    transform: translateY(-0.25vh);
+    height: 30.5vh;
+  }
+}
+
+.cf-svg {
+  transition-duration: 0.25s;
+  a {
+    width: 80%;
+  }
+}
+
+.cf-svg:hover {
+  transition-duration: 0.25s;
+  transform: scale(1.05);
+}
+
 .centerimg {
   display: block;
   margin-left: auto;
@@ -125,15 +169,15 @@ main .rightbar {
 
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   body {
     .slider {
-      scroll-snap-align: start;
+      scroll-snap-align: center;
       scroll-snap-stop: always;
     }
     main {
       article {
-        scroll-snap-align: start;
+        scroll-snap-align: center;
         scroll-snap-stop: always;
         height: 100vh;
         width: 100%;
@@ -147,8 +191,22 @@ html {
       }
     }
   }
-  footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+}
+// Mandatory snap on firefox, Chromium mandatory snap is VERY buggy and not smooth at all
+@-moz-document url-prefix() {
+  html {
+    scroll-snap-type: y mandatory;
+    .slider {
+      scroll-snap-align: start;
+    }
+    main {
+      article {
+        scroll-snap-align: start;
+      }
+    }
+    footer {
+      scroll-snap-align: end;
+      scroll-snap-stop: always;
+    }
   }
 }
