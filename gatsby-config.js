@@ -31,7 +31,13 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Ranchers`, `open sans`],
+        display: "swap",
+      },
+    }`gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
