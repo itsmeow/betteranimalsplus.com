@@ -29,7 +29,6 @@ const IndexPage = () => {
     query {
       images: allFile(filter: { sourceInstanceName: { eq: "devlogos" } }) {
         nodes {
-          extension
           relativePath
           childImageSharp {
             gatsbyImageData(
