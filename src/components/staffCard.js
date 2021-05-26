@@ -1,7 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
+import PropTypes from "prop-types"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const StaffCard = ({
   name,
@@ -12,23 +10,6 @@ const StaffCard = ({
   className,
   children,
 }) => {
-  const sources = useStaticQuery(graphql`
-    query {
-      images: allFile(filter: { sourceInstanceName: { eq: "devlogos" } }) {
-        edges {
-          node {
-            extension
-            relativePath
-            childImageSharp {
-              fluid(maxHeight: 175, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
   return (
     <section
       className={`highlightsection devsection${
@@ -37,13 +18,7 @@ const StaffCard = ({
       style={style}
     >
       <div className="devlogo">
-        <Img
-          fluid={
-            sources.images.edges.find((i) => i.node.relativePath === image).node
-              .childImageSharp.fluid
-          }
-          alt={name + " avatar"}
-        />
+        <GatsbyImage image={image} alt={name + " avatar"} />
       </div>
       <section className="devinfo">
         <section className="devtop">
@@ -56,13 +31,13 @@ const StaffCard = ({
         <p>{children}</p>
       </section>
     </section>
-  );
-};
+  )
+}
 
 StaffCard.propTypes = {
   name: PropTypes.string,
   role: PropTypes.string,
-  image: PropTypes.string,
-};
+  image: PropTypes.object,
+}
 
-export default StaffCard;
+export default StaffCard

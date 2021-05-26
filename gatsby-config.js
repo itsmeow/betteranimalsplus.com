@@ -1,7 +1,7 @@
-console.log("BUILD ON: " + process.env.NODE_ENV);
+console.log("BUILD ON: " + process.env.NODE_ENV)
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
@@ -9,7 +9,12 @@ module.exports = {
     description: `Better Animals Plus - Breathing new life into your worlds`,
     author: `itsmeow`,
   },
+  flags: {
+    DEV_SSR: true,
+    FAST_DEV: true,
+  },
   plugins: [
+    `gatsby-plugin-eslint`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,7 +37,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     `gatsby-plugin-meta-redirect`,
@@ -45,7 +55,8 @@ module.exports = {
         anonymize: false,
       },
     },
-    `gatsby-image`,
+    `gatsby-plugin-image`,
+    `babel-preset-gatsby`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -61,8 +72,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-    },
+    `gatsby-plugin-offline`,
   ],
-};
+}

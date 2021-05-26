@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ScrollAnimation from "react-animate-on-scroll";
-import useWindowWidth from "../hooks/useWindowWidth";
+import PropTypes from "prop-types"
+import ScrollAnimation from "react-animate-on-scroll"
+import useWindowWidth from "../hooks/useWindowWidth"
 
 const PageSection = ({ animateIn, children, ...delegate }) => {
-  const width = useWindowWidth();
+  const width = useWindowWidth()
   return (
     <article className="highlightsection" {...delegate}>
       <div className="center-box">
@@ -17,12 +16,12 @@ const PageSection = ({ animateIn, children, ...delegate }) => {
         )}
       </div>
     </article>
-  );
-};
+  )
+}
 
 PageSection.propTypes = {
   children: PropTypes.array,
   animateIn: PropTypes.string,
-};
+}
 
-export default PageSection;
+export default PageSection

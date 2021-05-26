@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import StyledButton from "./styledButton";
+import PropTypes from "prop-types"
+import StyledButton from "./styledButton"
 
 const LinkButton = ({ className, link, children, blank, ...rest }) => {
   return (
+    // eslint-disable-next-line react/jsx-no-target-blank
     <a
       href={link}
       target={blank === true ? "_blank" : null}
@@ -17,12 +17,12 @@ const LinkButton = ({ className, link, children, blank, ...rest }) => {
         {children}
       </StyledButton>
     </a>
-  );
-};
+  )
+}
 
 LinkButton.propTypes = {
   link: PropTypes.string,
   className: PropTypes.string,
-};
+}
 
-export default LinkButton;
+export default LinkButton

@@ -1,8 +1,12 @@
 @import "variables";
 $body-bg: $primary-background;
 $body-color: $text-color;
+
+// Dependencies
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/animate.css/animate.min.css";
+
+// Component Styles
 @import "odometer";
 @import "footer";
 @import "layout";
@@ -12,6 +16,7 @@ $body-color: $text-color;
 @import "patreon";
 @import "stylebutton";
 @import "scrollmenu";
+
 body {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,

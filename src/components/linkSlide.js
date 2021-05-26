@@ -1,4 +1,3 @@
-import React from "react";
 import { Slide } from "pure-react-carousel";
 import CenterImage from "./centerImage";
 

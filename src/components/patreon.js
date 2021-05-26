@@ -1,5 +1,3 @@
-import React from "react";
-
 const PatreonButton = ({ className, ...delegate }) => {
   return (
     <div

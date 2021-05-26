@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 import Radium from "radium";
 import ScrollAnimation from "react-animate-on-scroll";

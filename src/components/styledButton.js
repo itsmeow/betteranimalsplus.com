@@ -1,6 +1,4 @@
-import React from "react"
 import PropTypes from "prop-types"
-import Radium from "radium"
 
 const StyledButton = ({
   className,
@@ -13,20 +11,18 @@ const StyledButton = ({
   ...rest
 }) => {
   const styles = {
-    base: {
-      color: textColor,
-      height: height,
-      backgroundColor: color,
-      ":hover": {
-        backgroundColor: hoverColor,
-      },
+    color: textColor,
+    height: height,
+    backgroundColor: color,
+    ":hover": {
+      backgroundColor: hoverColor,
     },
   }
   return (
     <button
       {...rest}
       className={className ? `stylebutton ${className}` : "stylebutton"}
-      style={[styles.base, style]}
+      style={{ ...styles, ...style }}
     >
       {children}
     </button>
@@ -39,7 +35,6 @@ StyledButton.propTypes = {
   style: PropTypes.object,
   className: PropTypes.string,
   height: PropTypes.string,
-  children: PropTypes.element,
   textColor: PropTypes.string,
 }
 
@@ -50,4 +45,4 @@ StyledButton.defaultProps = {
   hoverColor: "rgb(80, 170, 255)",
 }
 
-export default Radium(StyledButton)
+export default StyledButton

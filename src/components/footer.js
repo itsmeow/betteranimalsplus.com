@@ -1,28 +1,16 @@
-import React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
-import { FaGithub } from "react-icons/fa";
+import { StaticImage } from "gatsby-plugin-image"
+import { FaGithub } from "react-icons/fa"
 
 const Footer = () => {
-  const { logo } = useStaticQuery(
-    graphql`
-      query {
-        logo: file(relativePath: { eq: "icon.png" }) {
-          childImageSharp {
-            fixed(width: 128, height: 128, quality: 100) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
-      }
-    `
-  );
   return (
     <footer>
       <div className="topfooter">
-        <Img
+        <StaticImage
+          src="./../data/icon.png"
           alt="Better Animals Plus logo"
-          fixed={logo.childImageSharp.fixed}
+          layout="fixed"
+          width={128}
+          height={128}
         />
         <div className="github">
           <a
@@ -44,7 +32,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

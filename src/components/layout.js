@@ -1,45 +1,21 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
+import { Container, Row, Col } from "react-bootstrap"
+import Footer from "./footer"
 
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+const Layout = ({ eventkey, children }) => (
+  <>
+    <Container fluid className="px-0 main" id={`page-${eventkey}`}>
+      <Row noGutters>
+        <Col>{children}</Col>
+      </Row>
+    </Container>
+    <Container fluid className="px-0" id={`page-footer-${eventkey}`}>
+      <Row noGutters>
+        <Col>
+          <Footer />
+        </Col>
+      </Row>
+    </Container>
+  </>
+)
 
-import { Container, Row, Col } from "react-bootstrap";
-
-import Footer from "./footer";
-
-const Layout = ({ children, pageInfo }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={(data) => (
-      <>
-        <Container fluid className="px-0 main">
-          <Row noGutters>
-            <Col>{children}</Col>
-          </Row>
-        </Container>
-        <Container fluid className="px-0">
-          <Row noGutters>
-            <Col>
-              <Footer />
-            </Col>
-          </Row>
-        </Container>
-      </>
-    )}
-  />
-);
-
-export default Layout;
+export default Layout

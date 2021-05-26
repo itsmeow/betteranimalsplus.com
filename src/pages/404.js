@@ -1,26 +1,10 @@
-import React from "react";
+import SEO from "../components/seo"
 
-import SEO from "../components/seo";
-
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { Link } from "gatsby";
-import { Button } from "react-bootstrap";
+import { Link } from "gatsby"
+import { Button } from "react-bootstrap"
+import { StaticImage } from "gatsby-plugin-image"
 
 const NotFoundPage = () => {
-  const { lamprey } = useStaticQuery(
-    graphql`
-      query {
-        lamprey: file(relativePath: { eq: "lamprey_cutout.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  );
   return (
     <>
       <SEO title="404" description="The page linked doesn't exist!" image="/" />
@@ -48,7 +32,14 @@ const NotFoundPage = () => {
             className="lamprey-holder"
             style={{ width: "90%", maxWidth: "500px" }}
           >
-            <Img fluid={lamprey.childImageSharp.fluid} alt="Lamprey" />
+            <StaticImage
+              src="../data/lamprey_cutout.png"
+              alt="Lamprey"
+              width={500}
+              quality={100}
+              layout="constrained"
+              placeholder="BLURRED"
+            />
           </div>
           <p>
             Oops!
@@ -62,7 +53,7 @@ const NotFoundPage = () => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default NotFoundPage;
+export default NotFoundPage
