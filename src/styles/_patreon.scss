@@ -9,12 +9,23 @@
   visibility: visible;
   width: 200px;
   height: 38px;
+  @media (max-width: 350px) {
+    width: 48px;
+    height: 38px;
+    .text {
+      display: none;
+    }
+    .kBWvho {
+      display: none;
+    }
+  }
 }
 ._2KV-widgets-shared--patreonWidgetWrapper .bVyoVa:hover {
   filter: saturate(1.5);
 }
 .Ubsnp {
-  width: 12rem;
+  width: 100%;
+  height: 100%;
 }
 .bVyoVa {
   text-decoration: none !important;
@@ -30,7 +41,7 @@
   display: inline-flex;
   font-size: 0.875rem !important;
   font-weight: 700;
-  height: unset;
+  height: 100%;
   -moz-box-pack: center;
   justify-content: center;
   padding: 0.46875rem 1rem;
@@ -50,6 +61,10 @@
   -moz-box-pack: center;
   justify-content: center;
   visibility: visible;
+  width: unset;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 .dQIjTw {
   align-self: center;

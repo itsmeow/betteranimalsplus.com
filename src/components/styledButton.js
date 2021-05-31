@@ -1,4 +1,5 @@
 import PropTypes from "prop-types"
+import useHover from "../hooks/useHover"
 
 const StyledButton = ({
   className,
@@ -10,19 +11,20 @@ const StyledButton = ({
   children,
   ...rest
 }) => {
-  const styles = {
-    color: textColor,
-    height: height,
-    backgroundColor: color,
-    ":hover": {
-      backgroundColor: hoverColor,
-    },
-  }
+  let [hoverRef, isHovered] = useHover()
   return (
     <button
       {...rest}
       className={className ? `stylebutton ${className}` : "stylebutton"}
-      style={{ ...styles, ...style }}
+      ref={hoverRef}
+      style={{
+        ...{
+          color: textColor,
+          height: height,
+          backgroundColor: isHovered ? hoverColor : color,
+        },
+        ...style,
+      }}
     >
       {children}
     </button>

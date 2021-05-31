@@ -41,11 +41,12 @@ const PatreonButton = ({ className, ...delegate }) => {
                 </svg>
               </span>
             </div>
-            <div className="sc-Axmtr kBWvho"></div>Become a patron
+            <div className="sc-Axmtr kBWvho"></div>
+            <span className="text">Become a patron</span>
           </div>
         </a>
       </div>
     </div>
-  );
-};
-export default PatreonButton;
+  )
+}
+export default PatreonButton
