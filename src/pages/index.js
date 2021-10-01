@@ -184,12 +184,12 @@ const IndexPage = () => {
               developing feature additions.
             </StaffCard>
             <StaffCard
-              name="Dr Foxbat"
+              name="Wolverbyte"
               role="Artist and Designer"
-              image={getImage("drfoxbat.png")}
+              image={getImage("wolverbyte.png")}
               className="center-item-2"
             >
-              Dr Foxbat works with Cyber in design and makes art for Better
+              Wolverbyte works with Cyber in design and makes art for Better
               Animals Plus.
             </StaffCard>
           </div>
