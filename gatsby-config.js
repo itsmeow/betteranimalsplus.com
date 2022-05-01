@@ -1,7 +1,12 @@
-console.log("BUILD ON: " + process.env.NODE_ENV)
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+const path = require("path")
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+)
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
@@ -10,12 +15,18 @@ module.exports = {
     author: `itsmeow`,
   },
   flags: {
-    DEV_SSR: true,
     FAST_DEV: true,
-    PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
-    `gatsby-plugin-eslint`,
+    {
+      resolve: "gatsby-plugin-eslint",
+      options: {
+        rulePaths: [gatsbyRequiredRules],
+        stages: ["develop"],
+        extensions: ["js", "jsx"],
+        exclude: ["node_modules", ".cache", "public"],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,12 +62,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        trackingId: `UA-141623735-3`,
+        trackingId: `G-6442VVJTBY`,
         head: true,
         anonymize: false,
       },
     },
     `gatsby-plugin-image`,
+    `gatsby-plugin-netlify`,
     `babel-preset-gatsby`,
     {
       resolve: `gatsby-plugin-manifest`,

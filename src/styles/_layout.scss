@@ -101,3 +101,7 @@ text-center {
     font-size: 3vw;
   }
 }
+
+.no-gutters {
+  --bs-gutter-x: 0;
+}
