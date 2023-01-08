@@ -11,14 +11,12 @@ const NotFoundPage = () => {
       <main>
         <div
           className="title-holder"
-          align="center"
-          style={{ marginTop: "5%" }}
+          style={{ marginTop: "5%", textAlign: "center" }}
         >
           <h1 className="title-head">Better Animals Plus</h1>
           <p className="title-low">Breathing new life into your worlds</p>
         </div>
         <div
-          align="center"
           style={{
             position: "absolute",
             width: "100%",
@@ -26,6 +24,7 @@ const NotFoundPage = () => {
             top: "50vh",
             transform: "translateY(-50%)",
             padding: "3%",
+            textAlign: "center",
           }}
         >
           <div

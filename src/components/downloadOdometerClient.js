@@ -11,11 +11,16 @@ const DownloadOdometerBase = ({ initialValue, isVisible }) => {
   const [hasBaseInterval, setHasBaseInterval] = useState(false)
   const getDownloads = async (pid) => {
     let res = await fetch(
-      `https://cors.itsmeow.dev/addons-ecs.forgesvc.net/api/v2/addon/${pid}`
+      `https://cors.itsmeow.dev/cf.way2muchnoise.eu/full_${pid}.svg`
     )
     if (res && res.ok) {
-      const json = await res.json()
-      return json.downloadCount
+      const text = await res.text()
+      let matches = Array.from(
+        text.matchAll(/<text x="[\d.]+" y="[\d.]+">([\d,]+)<\/text>/g),
+        (m) => m[1]
+      )
+      let downloads = parseInt(matches[0].replace(/,/g, ""))
+      return downloads
     } else {
       return 0
     }

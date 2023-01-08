@@ -73,7 +73,7 @@ const IndexPage = () => {
         <ClientOnly>
           <PageSection animateIn="animate__zoomInDown">
             <div className="text-center medium">With Over</div>
-            <DownloadOdometer initialValue="1000000" />
+            <DownloadOdometer initialValue="10000000" />
             <div className="text-center medium">Downloads</div>
           </PageSection>
         </ClientOnly>
